@@ -1,0 +1,47 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="BabySettings.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+   
+    <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="170"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--This is the name of the application and page title-->
+        <Grid Grid.Row="0" x:Name="TitleGrid">
+            <TextBlock x:Name="ApplicationName" Text="BabySettings" Style="{StaticResource PhoneTextPageTitle1Style}"/>
+            <TextBlock x:Name="ListName" Text="Paramètres" Style="{StaticResource PhoneTextPageTitle2Style}"/>
+        </Grid>
+
+        <!--This section is empty. Place new content here Grid.Row="1"-->
+        <Grid Grid.Row="1" x:Name="ContentGrid">
+            <TextBlock HorizontalAlignment="Left" Margin="20,25,0,0" Name="textBlock2" Text="Connexion" VerticalAlignment="Top" Width="200" FontSize="30"  Foreground="Orange"/>
+            <TextBlock HorizontalAlignment="Left" Margin="20,80,0,0" Name="textBlock3" FontSize="20" Text="Utiliser le reseau 3G" VerticalAlignment="Top" Width="182" Foreground="White" />
+            <TextBlock Height="99" HorizontalAlignment="Left" Margin="20,148,0,0" Name="testBlock3" Text="Je suis conscient que cette application utilisera ma connexion pour l'envoi et la réception de donnée au travers du réseau." VerticalAlignment="Top" Width="432" FontSize="20" TextWrapping="Wrap" Foreground="White"/>
+
+            <TextBlock Height="50" HorizontalAlignment="Left" Margin="20,270,0,0" Name="textBlock1" Text="Tarif Horaire" VerticalAlignment="Top" Width="200" FontSize="30" Foreground="Orange"/>
+            <TextBlock Text="{Binding ElementName=sliderEuros, Path=Value}" FontSize="30" Height="42" TextAlignment="Right" HorizontalAlignment="Left" Margin="340,270,0,0" Name="textBlockPrice" VerticalAlignment="Top" Width="89" Foreground="White"/>
+            <Slider Height="35" HorizontalAlignment="Left" Margin="20,325,0,0" Name="sliderEuros" Minimum="0" Maximum="10"  SmallChange="1" VerticalAlignment="Top" Width="432" />
+            <TextBlock HorizontalAlignment="Left" Margin="435,270,0,0" Name="textBlock4" Text="€" VerticalAlignment="Top"  Foreground="White" FontSize="30"/>
+            <Button Margin="166,430,165,68" Name="SavePrice" Click="SavePrice_Click" >
+                <StackPanel>
+                    <Image Name="image0" Source="/BabySettings;component/Images/appbar.save.rest.png" Height="74" Width="99"/>
+                </StackPanel>
+            </Button>
+            
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>

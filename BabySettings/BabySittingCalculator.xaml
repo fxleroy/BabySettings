@@ -1,0 +1,48 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="BabySettings.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneBackgroundBrush}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="170" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<!--This is the name of the application and page title-->
+		<Grid Grid.Row="0" x:Name="TitleGrid">
+			<TextBlock x:Name="ApplicationName" Text="BabySettings" Style="{StaticResource PhoneTextPageTitle1Style}" />
+			<TextBlock x:Name="ListName" Text="Paiement" Style="{StaticResource PhoneTextPageTitle2Style}" />
+		</Grid>
+
+		<!--This section is empty. Place new content here Grid.Row="1"-->
+		<Grid Grid.Row="1" x:Name="ContentGrid">
+			<Button Content="Start" Height="90" Margin="80,47,280,0" Name="StartButton" VerticalAlignment="Top" Click="StartButton_Click" />
+			<Image Height="100" HorizontalAlignment="Left" Margin="194,48,0,0" Name="image0" Stretch="Fill" VerticalAlignment="Top" Width="100" Source="/BabySettings;component/Images/appbar.next.rest.png" />
+			<Button Content="Stop" Height="90" Margin="292,48,80,0" Name="StopButton" VerticalAlignment="Top" Click="StopButton_Click" />
+			<Button Height="130" Width="130" Margin="175,154,175,0" Name="reset" VerticalAlignment="Top" Click="ResetClick">
+				<Image HorizontalAlignment="Left" Name="image3" Source="/BabySettings;component/Images/appbar.sync.rest.png" />
+			</Button>
+
+			<Image Height="7" HorizontalAlignment="Left" Margin="251,423,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="200" Source="/BabySettings;component/Images/bar.png" />
+			<TextBlock FontSize="50" Text="X" Style="{StaticResource PhoneTextPageTitle2Style}" Margin="251,362,0,0" HorizontalAlignment="Left" Width="52" Height="75" VerticalAlignment="Top" />
+
+			<TextBlock Name="txtHourNumber" Foreground="White" TextAlignment="Right" FontSize="40" HorizontalAlignment="Left" Margin="258,285,0,0" VerticalAlignment="Top" Width="150" Text="0" />
+            <TextBlock Name="txtHourPrice" Foreground="White" TextAlignment="Right" FontSize="40" HorizontalAlignment="Left" Margin="258,360,0,0" VerticalAlignment="Top" Text="0" Width="150" MouseLeftButtonDown="ChangeHourPrice" />
+            <TextBlock Name="Result" Foreground="White" TextAlignment="Right" FontSize="40" HorizontalAlignment="Left" Margin="258,435,0,0" VerticalAlignment="Top" Width="150" Text="0" />
+            <TextBlock Name="devise" Foreground="White" TextAlignment="Left" FontSize="40" HorizontalAlignment="Left" Margin="417,435,0,0" VerticalAlignment="Top" Width="35" Text="€" />
+
+            <TextBlock Foreground="Orange" FontSize="30" HorizontalAlignment="Left" Margin="20,435,0,0" Name="textBlock1" Text="Somme à payer :" VerticalAlignment="Top" Width="223" />
+        </Grid>
+	</Grid>
+</phone:PhoneApplicationPage>
